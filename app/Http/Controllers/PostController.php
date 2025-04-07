@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostCreateRequest;
+use App\Http\Requests\PostUpdateRequest;
 
 class PostController extends Controller
 {
@@ -78,7 +79,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */ 
-    public function update(Request $request, string $id)
+    public function update(PostUpdateRequest $request, string $id)
     {
 
         $post = Post::findOrFail($id);  
